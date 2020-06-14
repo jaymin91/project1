@@ -1,0 +1,36 @@
+<!--
+    Copyright (C) 2020 Jaymin Patel. All Rights Reserved.
+    -->
+
+
+{% extends 'layout.html' %}
+
+{% block title %}
+    REVIEW SUBMITTED
+{% endblock %}
+
+{% block extraHead %}
+
+    <link rel="stylesheet" href="../static/CSS/account_check.css">
+
+{% endblock %}
+
+{% block body %}
+    <span class="account-success">
+    {% if review_status %}
+        Your review is submitted. 
+    {% else %}
+        Review not submitted.
+        <br>
+        <br>
+        Reason = {{ message }}
+    {% endif %}
+    </span>
+
+    <br>
+    <br>
+
+    <span class="relink">
+        <a href="{{ url_for('book', isbn=book_id) }}">CLICK HERE</a> to go back.
+    </span>
+{% endblock %}

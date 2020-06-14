@@ -1,0 +1,29 @@
+<!--
+    Copyright (C) 2020 Jaymin Patel. All Rights Reserved.
+    -->
+
+
+{% extends 'layout.html' %}
+
+{% block title %}
+    LOGGED OUT
+{% endblock %}
+
+{% block extraHead %}
+
+    <link rel="stylesheet" href="../static/CSS/account_check.css">
+
+{% endblock %}
+
+{% block body %}
+    <span class="account-success">
+        You are LOGGED OUT.
+    </span>
+
+    <br>
+    <br>
+
+    <span class="relink">
+        <a href="{{ url_for('index') }}">CLICK HERE</a> to go back to homepage.
+    </span>
+{% endblock %}

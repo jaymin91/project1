@@ -1,0 +1,73 @@
+<!--
+    Copyright (C) 2020 Jaymin Patel. All Rights Reserved.
+    -->
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>BOOKS LOGIN</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width = device-width, initial-scale = 1, shrink-to-fit = no">
+
+        <link rel="stylesheet" href="../static/CSS/login_style.css">
+    </head>
+
+    <body>
+        <div class="header">
+            <h1>LOG IN OR CREATE NEW ACCOUNT FOR BOOKS WEBSITE.</h1>
+        </div>
+
+        <div class="login">
+                <p class="login-style-head">
+                    LOGIN WITH YOUR CREDENTIALS
+                    <br>
+                    <br>
+                    Enter your username and password to login.
+                </p>
+                <form action="{{ url_for('search_books') }}" method="POST">
+                    <h2 class="login-style-name">USERNAME:</h2>
+                    <input type="text" name="username" placeholder="ENTER USERNAME">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <h2 class="login-style-name">PASSWORD:</h2>
+                    <input type="password" name="password" placeholder="ENTER PASSWORD">
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <button class="login-style-button">LOGIN</button>
+                </form>
+        </div>
+
+        <hr>
+
+        <div class="new-account-box">
+            <p class="form-style-head">
+                CREATE NEW ACCOUNT.
+                <br>
+                <br>
+                Choose a username and password to create new account.
+            </p>
+            <form action="{{ url_for('new_account') }}" method="POST">
+                <h2 class="form-style-input">USERNAME:</h2>
+                <input type="text" name="username" placeholder="ENTER USERNAME">
+                <h2 class="form-style-input">PASSWORD:</h2>
+                <input type="password" name="password" placeholder="ENTER PASSWORD">
+                <br>
+                <br>
+                <button class="form-style-button">CREATE ACCOUNT</button>
+            </form>
+        </div>
+
+        <br><br><br><br><br><br><br><br>
+
+        <div class="footer">
+            This website is created by <span id="creator">Jaymin Patel</span>.
+            
+    </body>
+</html>

@@ -1,0 +1,25 @@
+/*
+    Copyright (C) 2020 Jaymin Patel. All Rights Reserved.
+    
+*/
+
+body
+{
+    text-align: center;
+    background: url(../images/books.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.account-success
+{
+    font-size: 40px;
+    color: rgb(0, 255, 98);
+}
+
+.relink
+{
+    font-size: 40px;
+    color: cyan;
+}

@@ -1,0 +1,177 @@
+/*
+    Copyright (C) 2020 Jaymin Patel. All Rights Reserved.
+    
+*/
+
+body
+{
+    text-align: center;
+    background: url(../images/books.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+#creator 
+{
+    color: #11ff88;
+    font-weight: bold;
+}
+
+.footer
+{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    color: grey;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.guest-info
+{
+    font-weight: bold;
+    color: white;
+}
+
+hr
+{
+    border: dashed yellow 4px;
+}
+
+::placeholder
+{
+    color: white;
+    opacity: 0.8;
+}
+
+.header
+{
+    color: rgb(255, 231, 13);
+}
+
+.login
+{
+    background: rgba(0, 0, 0, 0.5);
+    height: 280px;
+    width: 40%;
+    box-sizing: border-box;
+    margin: auto;
+    padding: 0;
+    color: blue;
+}
+
+.login-style-head
+{
+    color: rgb(255, 0, 157);
+    font-size: 20px;
+}
+
+.login-style-name
+{
+    float: left;
+    color: rgb(0, 255, 98);
+}
+
+.login form input
+{
+    float: right;
+    border: none;
+    border-bottom: 4px solid white;
+    background: transparent;
+    height: 40px;
+    width: 40%;
+    color: white;
+}
+
+.login-style-button
+{
+    background: rgb(0, 132, 255);
+    outline: none;
+    border: none;
+    height: 40px;
+    width: 60%;
+    margin: auto;
+    color: white;
+}
+
+.login-style-button:hover
+{
+    cursor: pointer;
+    background: rgb(0, 94, 182);
+}
+
+.form-style-head
+{
+    color: rgb(255, 0, 157);
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.new-account-box
+{
+    background: rgba(0, 0, 0, 0.5);
+    width: 340px;
+    height: 420px;
+    margin: auto;
+    box-sizing: border-box;
+    padding: 20px 40px;
+    color: white;
+}
+
+.form-style-input
+{
+    padding: 5px 0 4px;
+    color: rgb(0, 255, 98);
+}
+
+.form-style-button
+{
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 100%;
+    background: rgb(0, 132, 255);
+    color: white;
+}
+
+.form-style-button:hover
+{
+    cursor: pointer;
+    background: rgb(0, 94, 182);
+}
+
+.new-account-box form input
+{
+    width: 100%;
+    border: none;
+    border-bottom: 4px solid white;
+    background: transparent;
+    height: 40px;
+    color: white;
+    padding: 0;
+}
+
+@media (max-width:800px)
+{
+    .login
+    {
+        width: 80%;
+        height: 500px;
+    }
+
+    .login-style-name
+    {
+        float: none;
+    }
+
+    .login form input
+    {
+        float: none;
+        width: 40%;
+    }
+}

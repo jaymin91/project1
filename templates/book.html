@@ -1,0 +1,153 @@
+<!--
+    Copyright (C) 2020 Jaymin Patel. All Rights Reserved.
+    -->
+
+
+{% extends "layout.html" %}
+
+{% block title %}
+    THE BOOK
+{% endblock %}
+
+{% block extraHead %}
+
+    <link rel="stylesheet" href="../static/CSS/book.css">
+
+{% endblock %}
+
+{% block body %}
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="navbar-brand">
+            Welcome, {{ username }} .
+        </div>
+        <div class="navbar-collapse" id="navbar-menu">
+            <div class="navbar-nav ml-auto">
+                <form class="form-inline" action="{{ url_for('logout') }}" method="POST">
+                    <button class="btn btn-success">LOGOUT</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="search">
+        <span class="search-head">Search for a book:</span>
+        <form action="{{ url_for('search_result') }}" method="POST">
+            <select name="search_type">
+                <option value="isbn">ISBN</option>
+                <option value="title">TITLE</option>
+                <option value="author">AUTHOR</option>
+                <option value="year">YEAR</option>
+            </select>
+            <input type="text" name="search_value" placeholder="Type your response">
+            <button class="btn btn-primary">SEARCH</button>
+        </form>
+    </div>
+
+    <br>
+
+    <hr>
+
+    <br>
+
+    <div class="bookInfo">
+
+        <div class="book_head">
+            BOOK'S INFORMATION:
+        </div>
+
+        <div class="book_title">
+            The book's title is : {{ message.title }} .
+        </div>
+
+        <div class="book_author">
+            This book's author is : {{ message.author }} .
+        </div>
+
+        <div class="book_year">
+            This book was published in : {{ message.year }} .
+        </div>
+
+        <div class="book_isbn">
+            This book's ISBN is : {{ message.isbn }} .
+        </div>
+    </div>
+
+    <hr>
+
+    {% if goodreads_ratings_count %}
+        <div class="goodreads">
+            <img src="../static/images/goodreads_icon_50x50-823139ec9dc84278d3863007486ae0ac.png">
+            <span id="api-review-head">Goodreads review via API</span>
+            <br>
+            <span id="api-review-data">
+                Goodreads rating count is: {{ goodreads_ratings_count }}
+                <br>
+                Goodreads average rating is: {{ goodreads_average_rating }}
+            </span>
+        </div>
+
+        <hr>
+    {% endif %}
+
+    <div class="user-review">
+        <h2>YOUR REVIEW HERE.</h2>
+        <form action="{{ url_for('review') }}" method="POST">
+            <div class="form-group">
+                <label for="ratings">Give a rating:</label>
+                <select class="form-control" id="ratings" name="rating">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+
+            <input type="hidden" name='book_isbn_review' value='{{ message.isbn }}'>
+            <textarea rows="4" cols="100" name="review-data" placeholder="Your review here."
+            wrap="hard" maxlength="200" class="form-control"></textarea>
+
+            <br>
+
+            {% if status %}
+            <button class="btn btn-info" disabled>SUBMIT</button>
+            {% else %}
+            <button class="btn btn-info">SUBMIT</button>
+            {% endif %}
+
+            {% if guest %}
+            <br>
+            <span id="guest-review">
+                Guests cannot submit reviews.
+                <br>
+                Create an account and then submit a review.
+            </span>
+            {% endif %}
+        </form>
+    </div>
+
+    <hr>
+
+    {% if other_review_num %}
+        <div>
+            <h2>Other reviews submitted.</h2>
+
+            {% for review in reviews %}
+            <div class="card border-primary text-white bg-success mx-auto" style="width:80%;">
+                <div class="card-head bg-primary">
+                    Review by: {{ review.username }}
+                </div>
+                <div class="card-body">
+                    Rating given: {{ review.rating }}
+                    <br>
+                    Review given: {{ review.review }}
+                </div>
+            </div>
+            <br>
+            {% endfor %}
+
+        </div>
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,72 @@
+<!--
+    Copyright (C) 2020Jaymin Patel. All Rights Reserved.
+    -->
+
+{% extends "layout.html" %}
+
+{% block title %}
+    SEARCH FOR BOOKS
+{% endblock %}
+
+{% block extraHead %}
+
+    <link rel="stylesheet" href="../static/CSS/search.css">
+
+{% endblock %}
+
+{% block body %}
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="navbar-brand">
+            Welcome, {{ username }} .
+        </div>
+        <div class="navbar-collapse" id="navbar-menu">
+            <div class="navbar-nav ml-auto">
+                <form class="form-inline" action="{{ url_for('logout') }}" method="POST">
+                    <button class="btn btn-success">LOGOUT</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <div class="search">
+        <span class="search-head">Search for a book:</span>
+        <form action="{{ url_for('search_result') }}" method="POST">
+            <select name="search_type">
+                <option value="isbn">ISBN</option>
+                <option value="title">TITLE</option>
+                <option value="author">AUTHOR</option>
+                <option value="year">YEAR</option>
+            </select>
+            <input type="text" name="search_value" placeholder="Type your response">
+            <button class="btn btn-primary">SEARCH</button>
+        </form>
+    </div>
+
+    <br>
+
+    <hr>
+
+    <br>
+
+    <div>
+        <table class="table table-striped">
+            <tr>
+                <th>ISBN</th>
+                <th>TITLE</th>
+                <th>AUTHOR</th>
+                <th>YEAR</th>
+            </tr>
+
+            {% for book in books %}
+                <tr>
+                    <td><a href="{{ url_for('book', isbn=book.isbn) }}"> {{ book.isbn }} </a> </td>
+                    <td>{{ book.title }}</td>
+                    <td>{{ book.author }}</td>
+                    <td>{{ book.year }}</td>
+                </tr>    
+            {% endfor %}
+        </table>
+    </div>
+
+{% endblock %}

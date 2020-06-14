@@ -1,0 +1,29 @@
+<!--
+    Copyright (C) 2020 Jaymin Patel. All Rights Reserved.
+    -->
+
+
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>{% block title %} {% endblock %}</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width = device-width, initial-scale = 1, shrink-to-fit = no">
+
+        <link rel="stylesheet" href="../static/CSS/bootstrap/bootstrap.min.css">
+        <script src="../static/javascripts/popper.min.js"></script>
+        <script src="../static/javascripts/jquery-3.3.1.slim.min.js"></script>
+        <script src="../static/CSS/bootstrap/bootstrap.min.js"></script>
+
+        {% block extraHead %} {% endblock %}
+
+    </head>
+
+    <body>
+        {% block body %}
+
+        {% endblock %}
+    </body>
+</html>

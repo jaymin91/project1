@@ -1,0 +1,73 @@
+/*
+    Copyright (C) 2020 Jaymin Patel. All Rights Reserved.
+   
+*/
+
+body
+{
+    text-align: center;
+}
+
+#guest-review
+{
+    color: red;
+    font-weight: bold;
+}
+
+.goodreads-image
+{
+    float: left;
+    margin: auto;
+}
+
+.search-head
+{
+    color: rgb(117, 72, 241);
+    font-size: 25px;
+}
+.form-control
+{
+    width: 60%;
+    margin: auto;
+}
+
+hr
+{
+    border: dashed rgb(0, 255, 98) 4px;
+}
+
+#api-review-head
+{
+    font-size: 28px;
+    color: rgb(255, 0, 157);
+}
+
+.book_head
+{
+    font-size: 48px;
+    color: rgb(0, 132, 255);
+}
+
+.book_title
+{
+    font-size: 40px;
+    color: rgb(230, 55, 49);
+}
+
+.book_author
+{
+    font-size: 40px;
+    color: green;
+}
+
+.book_year
+{
+    font-size: 40px;
+    color: violet;
+}
+
+.book_isbn
+{
+    font-size: 40px;
+    color: blue;
+}
